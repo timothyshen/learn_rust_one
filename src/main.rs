@@ -47,7 +47,7 @@ fn main5() {
 
 //     let r1 = &c;
 //     // 填写空白处，但是不要修改其它行的代码
-//     let r2 = c;
+//     let ref r2 = c;
 
 //     assert_eq!(*r1, *r2);
     
@@ -64,7 +64,7 @@ fn main5() {
 // 移除代码某个部分，让它工作
 // 你不能移除整行的代码！
 fn main7() {
-    let mut s = String::from("hello");
+    let s = String::from("hello");
 
     let r1 = &s;
     let r2 = &s;
@@ -101,7 +101,7 @@ fn main10() {
     let r2 = &mut s;
     r2.push_str("!");
     
-    println!("{}",r1);
+    // println!("{}",r1);
 }
 
 fn main11() {
