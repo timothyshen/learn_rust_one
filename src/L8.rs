@@ -23,7 +23,7 @@ fn main4() {
     let mut s = String::from("hello");
     s.push(',');
     s.push_str(" world");
-    s.push('!');
+    s += "!";
 
     println!("{}", s)
 }
@@ -36,43 +36,43 @@ fn main5() {
     assert_eq!(s1, "I like cats")
 }
 
-// fn main() {
-//     let s1 = String::from("hello,");
-//     let s2 = String::from("world!");
-//     let s3 = s1 + &s2;
-//     assert_eq!(s3,"hello,world!");
-//     format!("{}", &s1);
-// }
+fn main6() {
+    let s1 = String::from("hello,");
+    let s2 = String::from("world!");
+    let s3 = s1.clone() + &s2;
+    assert_eq!(s3,"hello,world!");
+    format!("{}", &s1);
+}
 
 
 // // 使用至少两种方法来修复错误
 // fn main() {
 //     let s = String::from("hello, world");
-//     greetings(&s)
-// }
-
-// fn greetings(s:&str) {
-//     println!("{}",s)
-// }
-
-
-// // 使用至少两种方法来修复错误
-// fn main() {
-//     let s = "hello, world";
 //     greetings(s)
 // }
 
-// fn greetings(s: String) {
+// fn greetings(s:String) {
 //     println!("{}",s)
 // }
+
+
+// 使用至少两种方法来修复错误
+fn main() {
+    let s = "hello, world".to_string();
+    greetings(s)
+}
+
+fn greetings(s: String) {
+    println!("{}",s)
+}
 
 // 使用两种方法来解决错误，不要新增代码行
 // fn main() {
 //     let s = "hello, world".to_string();
-//     let s1: &str = s.as_str();
+//     let s1: &str = &s;
 // }
-// 使用两种方法来解决错误，不要新增代码行
-fn main() {
-    let s = String::from("Hello, world");
-    let s1: &str = &s;
-}
+// // 使用两种方法来解决错误，不要新增代码行
+// fn main() {
+//     let s = "hello, world";
+//     let s1: &str = s;
+// }
