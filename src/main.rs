@@ -36,12 +36,13 @@
 // struct Color(i32, i32, i32);
 // struct Point(i32, i32, i32);
 // fn main() {
-//     let v = Color(0, 127, 255);
+//     let v = Point(0, 127, 255);
 //     check_color(v);
 // }   
 
-// fn check_color(p: Color) {
-//     assert_eq!(p.0, 0);
+// fn check_color(p: Point) {
+//     let Point(x, _, _) = p;
+//     assert_eq!(x, 0);
 //     assert_eq!(p.1, 127);
 //     assert_eq!(p.2, 255);
 //  }
@@ -121,7 +122,7 @@
 
 //     dbg!(&rect1); // 打印 debug 信息到标准错误输出 stderr
 
-//     println!("rect1 is {}", rect1); // 打印 debug 信息到标准输出 stdout
+//     println!("{:?}", rect1); // 打印 debug 信息到标准输出 stdout
 // }
 
 
@@ -137,8 +138,8 @@ fn main() {
         data: "Rust By Practice".to_string()
     };
 
+    
     let _name = f.name;
 
-    // 只能修改这一行
-    println!("{}, {}, {:?}",_name, f.data, f);
+    println!("{}", f.data);
 } 
