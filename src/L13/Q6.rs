@@ -16,7 +16,7 @@ fn main() {
         }
 
 
-        break;
+        n += 1;
     }
 
     println!("n 的值是 {}, 循环结束",n);
