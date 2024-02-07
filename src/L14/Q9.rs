@@ -1,5 +1,3 @@
-
-// 就地修复错误
 fn main() {
     let age = Some(30);
     
