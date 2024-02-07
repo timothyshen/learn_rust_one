@@ -20,7 +20,7 @@ fn main() {
 
 fn show_message(msg: Message) {
     match msg {
-        Message::Move(a, b) => { // 这里匹配 Message::Move
+        Message::Move(x: a, y: b) => { // 这里匹配 Message::Move
             assert_eq!(a, 1);
             assert_eq!(b, 3);
         },
