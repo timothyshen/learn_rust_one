@@ -8,11 +8,11 @@ enum TrafficLightColor {
 
 // 为 TrafficLightColor 实现所需的方法
 impl TrafficLightColor {
-    fn color(&self) -> &str {
-        match self {
-            TrafficLightColor::Red => "red",
-            TrafficLightColor::Yellow => "yellow",
-            TrafficLightColor::Green => "green",
+    fn color(&self) -> String {
+        match *self {
+            TrafficLightColor::Red => "red".to_string(),
+            TrafficLightColor::Yellow => "yellow".to_string(),
+            TrafficLightColor::Green => "green".to_string(),
         }
     }    
 }

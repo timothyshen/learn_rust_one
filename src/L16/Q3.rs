@@ -4,7 +4,7 @@ struct TrafficLight {
 
 impl TrafficLight {
     // 使用 `Self` 填空
-    pub fn show_state(&self)  {
+    pub fn show_state(self: &self)  {
         println!("the current state is {}", self.color);
     }
 
