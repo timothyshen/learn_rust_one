@@ -51,5 +51,5 @@ fn main() {
 // 在下面实现 `fn summary` 函数
 
 fn summary(item: &impl Summary) {
-    println!("{}", item.summarize());
+    let _ = item.summarize();
 }

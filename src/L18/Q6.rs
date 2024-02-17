@@ -24,7 +24,7 @@ fn random_animal(random_number: f64) -> impl Animal {
     if random_number < 0.5 {
         Sheep {}
     } else {
-        Cow {}
+        Sheep {}
     }
 }
 
