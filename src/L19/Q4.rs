@@ -13,12 +13,12 @@ impl Foo for String {
 
 // 通过泛型实现以下函数
 fn static_dispatch<T: Foo>(x: T) {
-    println!("{}", x.method());
+    x.method();
 }
 
 // 通过特征对象实现以下函数
 fn dynamic_dispatch(x: &dyn Foo) {
-    println!("{}", x.method());
+    x.method();
 }
 
 fn main() {

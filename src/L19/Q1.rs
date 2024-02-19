@@ -1,11 +1,11 @@
 trait Bird {
-    fn quack(&self);
+    fn quack(&self) -> String;
 }
 
 struct Duck;
 impl Duck {
-    fn fly(&self) {
-        println!("Look, the duck is flying")
+    fn swim(&self) {
+        println!("Look, the duck is swimming")
     }
 }
 struct Swan;
@@ -16,25 +16,42 @@ impl Swan {
 }
 
 impl Bird for Duck {
-    fn quack(&self) {
-        println!("{}", "duck duck");
+    fn quack(&self) -> String{
+        "duck duck".to_string()
     }
 }
 
 impl Bird for Swan {
-    fn quack(&self) {
-        println!("{}", "swan swan");
+    fn quack(&self) -> String{
+        "swan swan".to_string()
     }
 }
 
 fn main() {
     // 填空
-    let birds = vec![Box::new(Duck), Box::new(Swan)];
+    let duck = Duck;
+    duck.swim();
 
-    for bird in birds {
-        bird.quack();
-        // 当 duck 和 swan 变成 bird 后，它们都忘了如何翱翔于天际，只记得该怎么叫唤了。。
-        // 因此，以下代码会报错
+    let bird = hatch_a_bird(2);
+    // 变成鸟儿后，它忘记了如何游，因此以下代码会报错
+    // bird.swim();
+    // 但它依然可以叫唤
+    assert_eq!(bird.quack(), "duck duck");
+
+    let bird = hatch_a_bird(1);
+    // 这只鸟儿忘了如何飞翔，因此以下代码会报错
         // bird.fly();
+    // 但它也可以叫唤
+    assert_eq!(bird.quack(), "swan swan");
+
+    println!("Success!")
+}
+
+// 实现以下函数
+fn hatch_a_bird(kind: u8) -> Box<dyn Bird> {
+    if kind == 1 {
+        Box::new(Swan)
+    } else {
+        Box::new(Duck)
     }
 }
