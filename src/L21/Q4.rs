@@ -6,8 +6,12 @@ fn main() {
         println!("{:?}", v[i])
     }
 
-    for i in &mut v {
-        *i += 1;  
+    for i in 0..5 {
+        if let Some(x) = v.get(i) {
+            v[i] = x + 1;
+        } else {
+            v.push(i + 2)
+        }
     }
     
     assert_eq!(v, vec![2, 3, 4, 5, 6]);

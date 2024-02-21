@@ -14,8 +14,7 @@ fn main() {
     // 注意：切片和 `&Vec` 是不同的类型，后者仅仅是 `Vec` 的引用，并可以通过解引用直接获取 `Vec`
     let vec_ref: &mut Vec<i32> = &mut v;
     (*vec_ref).push(4);
-    let slice3 = &mut v[0..3];
-    slice3[3] = 4;
+    let slice3 = &mut v[0..];
 
     assert_eq!(slice3, &[1, 2, 3, 4]);
 
