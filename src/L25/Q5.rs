@@ -20,9 +20,9 @@ fn multiply(n1_str: &str, n2_str: &str) -> Result<i32, ParseIntError> {
 // 提示：使用 `and_then` 和 `map`
 fn multiply1(n1_str: &str, n2_str: &str) -> Result<i32, ParseIntError> {
     // 实现...
-    let mut f = n1_str.parse::<i32>()?;
-    let mut s = n2_str.parse::<i32>()?;
-    Ok(f * s)
+     n1_str.parse::<i32>().and_then(|n1| {
+        n2_str.parse::<i32>().map(|n2| n1 * n2)
+    })
 }
 
 fn print(result: Result<i32, ParseIntError>) {
