@@ -1,5 +1,4 @@
-mod serving {
-        fn take_order() {}
-        fn serve_order() {}
-        fn take_payment() {}
-    }
+pub fn take_order() {}
+pub fn serve_order() {}
+pub fn take_payment() {}
+fn complain() {}

@@ -1,8 +1,6 @@
+mod front_of_house;
 
-pub fn eat_at_restaurant() -> String {
-    front_of_house::hosting::add_to_waitlist();
-    
-    back_of_house::cook_order();
-
-    String::from("yummy yummy!")
+fn main() {
+    assert_eq!(front_of_house::hosting::seat_at_table(), "sit down please");
+    assert_eq!(hello_package::eat_at_restaurant(),"yummy yummy!");
 }
