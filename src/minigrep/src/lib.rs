@@ -1,5 +1,6 @@
 use std::{fs, result};
 use std::error::Error;
+use std::env;
 
 pub struct Config {
     pub query: String,
@@ -30,9 +31,9 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>>{
     let contents = fs::read_to_string(config.file_path)?;
 
     let results = if config.ignore_case {
-        search_case_insensitive(&config.query, &config.contents)
+        search_case_insensitive(&config.query, &contents)
     } else {
-        search(&config.query, &config.contents)
+        search(&config.query, &contents)
     };
 
     for line in results {
