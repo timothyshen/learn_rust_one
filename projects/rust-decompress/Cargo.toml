@@ -1,6 +1,5 @@
-workspace = { members = ["projects/rust-decompress"] }
 [package]
-name = "minigrep"
+name = "rust-decompress"
 version = "0.1.0"
 edition = "2021"
 
