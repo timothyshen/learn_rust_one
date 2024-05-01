@@ -5,8 +5,22 @@ fn main() {
     std::process::exit(real_main());
 }
 
+/*  
+
+    This is a simple program that extracts a zip archive.
+
+    Example usage:
+
+    $ cargo run --example extract src/main.rs
+
+*/
 
 fn real_main() -> i32{
+
+    // read the arguments
+    // args[0] is the name of the program
+    // args[1] is the name of the zip file
+
     let args: Vec<_> = std::env::args().collect();
 
     if args.len() < 2 {
@@ -19,6 +33,12 @@ fn real_main() -> i32{
 
     let mut archive = zip::ZipArchive::new(file).unwrap();
 
+    /*
+        Loop over each file in the archive,
+        creat
+    
+    */
+    
     for i in 0..archive.len() {
         let mut file = archive.by_index(i).unwrap();
 
