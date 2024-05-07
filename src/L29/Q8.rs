@@ -7,6 +7,6 @@ fn main() {
     exec(update_string);
 }
 
-fn exec<'a, F: FnOnce(&'a str)>(mut f: F) {
+fn exec<'a, F: FnOnce(&'a str) -> String>(mut f: F) {
     f("hello");
 }

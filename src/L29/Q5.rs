@@ -1,7 +1,7 @@
 /* Make it work by changing the trait bound, in two ways*/
 fn fn_once<F>(mut func: F)
 where
-    F: FnMut(usize) -> bool,
+    F: FnOnce(usize) -> bool + Copy,// 改动在这里
 {
     println!("{}", func(3));
     println!("{}", func(4));

@@ -1,6 +1,6 @@
 
 /* Implement `call_me` to make it work */
-fn call_me {
+fn call_me<F: Fn()> (f: F) {
     f();
 }
 

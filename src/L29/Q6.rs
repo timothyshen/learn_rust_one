@@ -9,6 +9,6 @@ fn main() {
 }
 
 /* Fill in the blank */
-fn exec<'a, F: FnOnce(&'a str)>(mut f: F)  {
+fn exec<'a, F: FnMut(&'a str)>(mut f: F)  {
     f("hello")
 }

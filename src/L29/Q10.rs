@@ -5,7 +5,7 @@ fn create_fn() -> impl fn(i32) -> i32 {
 
     // How does the following closure capture the environment variable `num`
     // &T, &mut T, T ?
-    |x| x + num
+    move |x| x + num
 }
 
 
