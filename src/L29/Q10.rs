@@ -1,6 +1,6 @@
 /* Fill in the blank using two approaches,
  and fix the error */
-fn create_fn() -> __ {
+fn create_fn() -> impl fn(i32) -> i32 {
     let num = 5;
 
     // How does the following closure capture the environment variable `num`

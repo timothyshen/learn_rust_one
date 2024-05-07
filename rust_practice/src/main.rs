@@ -1,15 +1,15 @@
-/* Fill in the blank and fix the error*/
-fn factory(x:i32) -> Box<dyn Fn(i32) -> i32>{
-
+/* Fill in the blank using two approaches,
+ and fix the error */
+fn create_fn() -> impl Fn(i32) -> i32 {
     let num = 5;
 
-    if x > 1{
-        Box::new(move |x| x + num)
-    } else {
-        Box::new(move |x| x + num)
-    }
+    // How does the following closure capture the environment variable `num`
+    // &T, &mut T, T ?
+    move |x| x + num
 }
 
 
 fn main() {
+    let fn_plain = create_fn();
+    fn_plain(1);
 }
